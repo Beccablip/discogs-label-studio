@@ -8,6 +8,13 @@ from reportlab.pdfgen import canvas
 from reportlab.pdfbase.pdfmetrics import stringWidth
 from PIL import Image, ImageTk
 
+# Give this Python process a unique Windows App ID so it displays custom icons on the taskbar
+try:
+    import ctypes
+    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("DiscogsLabelStudio.App.1")
+except Exception:
+    pass
+
 # ================= CONFIG =================
 CONFIG_FILE = "config.json"
 MASTER_CSV = "Vinyl_Labels_Discogs_FULL_SCHEMA.csv"
@@ -79,7 +86,8 @@ class DiscogsApp(tk.Tk):
 
         # Window Icon
         if os.path.exists("logo.png"):
-            self.iconphoto(True, tk.PhotoImage(file="logo.png"))
+            icon_img = Image.open("logo.png")
+            self.iconphoto(True, ImageTk.PhotoImage(icon_img))
 
         self.config_data = load_config()
         self.pause_flag = threading.Event()

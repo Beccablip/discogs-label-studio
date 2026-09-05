@@ -15,6 +15,9 @@ dist/
 # Binaries and Executables
 *.exe
 
+# Allow our release build
+!DiscogsLabelStudio.exe
+
 # Extra folders and utility scripts
 Exact/
 getdiscogspics/
