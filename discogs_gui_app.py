@@ -77,17 +77,9 @@ class DiscogsApp(tk.Tk):
         self.resizable(False, False)
         self.configure(bg=BG)
 
-def __init__(self):
-        super().__init__()
-        self.title("Discogs Label Studio")
-        self.geometry("700x450")
-        self.resizable(False, False)
-        self.configure(bg=BG)
-
-        # --- ADD THIS LINE FOR THE WINDOW ICON ---
+        # Window Icon
         if os.path.exists("logo.png"):
             self.iconphoto(True, tk.PhotoImage(file="logo.png"))
-        # ----------------------------------------
 
         self.config_data = load_config()
         self.pause_flag = threading.Event()
