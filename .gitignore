@@ -1,0 +1,22 @@
+# Secrets & Local Config
+config.json
+
+# Python & Build folders
+__pycache__/
+venv/
+build/
+dist/
+*.spec
+
+# App Output
+*.csv
+*.pdf
+
+# Binaries and Executables
+*.exe
+
+# Extra folders and utility scripts
+Exact/
+getdiscogspics/
+pyinstxtractor/
+pyinstxtractor.py
